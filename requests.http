@@ -1,0 +1,44 @@
+### Колекція запитів до dummyjson.com для VS Code REST Client
+### (аналог колекції Postman — Рівень 1, завдання 2)
+###
+### Як користуватися:
+###   1. Встановіть розширення "REST Client" (humao.rest-client) у VS Code.
+###   2. Відкрийте цей файл і натисніть "Send Request" над потрібним запитом.
+###   3. Результат відкриється у сусідній вкладці разом зі статусом і заголовками.
+
+@baseUrl = https://dummyjson.com
+
+### 1. GET — отримати товар з id = 1
+GET {{baseUrl}}/products/1 HTTP/1.1
+Accept: application/json
+
+### 2. POST — створити новий товар (очікується 201 Created)
+POST {{baseUrl}}/products/add HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "TypeScript: повний практичний посібник",
+  "price": 499
+}
+
+### 3. PUT — повністю оновити товар з id = 1 (очікується 200 OK)
+PUT {{baseUrl}}/products/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "TypeScript: посібник (оновлено через PUT)"
+}
+
+### 4. DELETE — видалити товар з id = 1 (у відповіді isDeleted: true)
+DELETE {{baseUrl}}/products/1 HTTP/1.1
+Accept: application/json
+
+### 5. GET — список товарів для аналізу в DevTools (той самий запит, що і в завданні 3)
+GET {{baseUrl}}/products?limit=5 HTTP/1.1
+Accept: application/json
+
+### 6. GET — імітація помилки 404 (перевірка статусів)
+GET {{baseUrl}}/products/999999 HTTP/1.1
+Accept: application/json

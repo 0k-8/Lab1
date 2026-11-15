@@ -1,0 +1,25 @@
+{
+  "name": "web-rozrobka-lab1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Практична робота №1: дослідження мережевих протоколів HTTP/HTTPS засобами TypeScript, curl і REST Client",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "lab1": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "http",
+    "https",
+    "typescript",
+    "dummyjson",
+    "curl"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
